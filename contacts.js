@@ -23,7 +23,9 @@ async function listContacts() {
 
 async function getContactById(contactId) {
   const allcontacts = await readContacts();
-  return allcontacts.find((contact) => contact.id === contactId);
+  const contact = allcontacts.find((contact) => contact.id === contactId);
+
+  return allcontacts.find((contact) => contact.id === contactId) || null;
 }
 
 async function removeContact(contactId) {
